@@ -1,9 +1,9 @@
-import { View, Text } from "react-native";
 import React from "react";
+import { Text, View } from "react-native";
 
 const Home = () => {
   return (
-    <View>
+    <View className="mt-10 ml-4">
       <Text>Home</Text>
     </View>
   );
