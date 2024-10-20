@@ -1,9 +1,10 @@
-import { Redirect, router } from "expo-router";
 import { StatusBar } from "expo-status-bar";
-import { Image, ScrollView, Text, View } from "react-native";
+import { Redirect, router } from "expo-router";
+import { View, Text, Image, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import CustomButton from "../components/CustomButton";
+
 import { images } from "../constants";
+import { CustomButton } from "../components";
 import { useGlobalContext } from "../context/GlobalProvider";
 
 export default function App() {
@@ -30,12 +31,15 @@ export default function App() {
               className="text-3xl text-white 
                         font-semibold text-center"
             >
-            Seu reator de {" "}
-              <Text className="text-secondary-200 font-bold">produtividade</Text>
+              Seu reator de{" "}
+              <Text className="text-secondary-200 font-bold">
+                produtividade
+              </Text>
             </Text>
           </View>
           <Text className="text-sm font-pregular text-gray-100 mt-7 text-center">
-            Desempenho e precisão dignos de um Vingador na gestão das suas tarefas
+            Desempenho e precisão dignos de um Vingador na gestão das suas
+            tarefas
           </Text>
           <CustomButton
             title="Continuar"
