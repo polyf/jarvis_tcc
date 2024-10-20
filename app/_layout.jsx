@@ -1,7 +1,8 @@
-import { SplashScreen, Stack } from 'expo-router'
-import { useFonts} from 'expo-font'
-import { useEffect } from 'react';
-import GlobalProvider from '../context/GlobalProvider'
+import { SplashScreen, Stack } from "expo-router";
+import { useFonts } from "expo-font";
+import { useEffect } from "react";
+import "react-native-url-polyfill/auto";
+import GlobalProvider from "../context/GlobalProvider";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -21,28 +22,37 @@ const RootLayout = () => {
   useEffect(() => {
     if (error) throw error;
     if (fontsLoaded) SplashScreen.hideAsync();
-  }, [fontsLoaded])
+  }, [fontsLoaded]);
 
   if (!fontsLoaded && !error) return null;
 
   return (
     <GlobalProvider>
       <Stack>
-        <Stack.Screen name="index" options={{
-          headerShown: false
-        }}></Stack.Screen>
-        <Stack.Screen name="(auth)" options={{
-          headerShown: false
-        }}></Stack.Screen>
-        <Stack.Screen name="(tabs)" options={{
-          headerShown: false
-        }}></Stack.Screen>
+        <Stack.Screen
+          name="index"
+          options={{
+            headerShown: false,
+          }}
+        ></Stack.Screen>
+        <Stack.Screen
+          name="(auth)"
+          options={{
+            headerShown: false,
+          }}
+        ></Stack.Screen>
+        <Stack.Screen
+          name="(tabs)"
+          options={{
+            headerShown: false,
+          }}
+        ></Stack.Screen>
         {/* <Stack.Screen name="/search/[query]" options={{
           headerShown: false
         }}></Stack.Screen> */}
       </Stack>
     </GlobalProvider>
-  )
-}
+  );
+};
 
 export default RootLayout;
